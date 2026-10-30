@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --color1: #F2E527;
+    --color2: #403501;
+    --color3: #0D0D0D;
+    --color4: #F2D027;
+}
+
+body {
+    background-image: url(imagenes/sw_fondo.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+#contenedor {
+    width: 90%;
+    margin: 25px auto;
+}
+
+/* CABECERA (HEADER) */
+#cabecera {
+    border: 1px solid var(--color2);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+}
+
+#logo {
+    height: 100px;
+}
+
+#search {
+    height: 50px;
+}
+
+/* TITULO PRINCIPAL CON ICONOS */
+#titulo {
+    text-align: center;
+    margin: 20px 10px;
+    padding: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+#titulo i {
+    color: var(--color1);
+    margin: 0 10px;
+}
+
+/* MARCO CONTENEDOR GENERAL DE LOS 3 EPISODIOS */
+#contenidos {
+    display: flex !important;
+    flex-direction: row !important;
+    /* Obliga a ponerlos lado a lado horizontalmente */
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    /* Evita que se bajen a la siguiente línea */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ffffff;
+    /* Borde blanco del marco exterior */
+    background-color: rgba(0, 0, 0, 0.65);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* TARJETA DE CADA EPISODIO */
+.episodio {
+    width: 31%;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* MARCO BLANCO EN CADA AFICHE */
+.episodio img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 15px auto;
+    border: 3px solid #ffffff;
+    /* Marco blanco a la foto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
+}
+
+
+/* TEXTO DE LOS EPISODIOS CON ICONOS */
+.episodio h3 {
+    text-align: center;
+    margin: 12px 0;
+    color: var(--color4);
+    /* Color amarillo */
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(242, 229, 39, 0.6), 2px 2px 4px #000000
+}
+
+.episodio h3 i {
+    color: var(--color1);
+    margin: 0 5px;
+    text-shadow: 0 0 8px rgba(242, 229, 39, 0.6), 2px 2px 4px #000000
+}
+
+.episodio p {
+    text-align: justify;
+    color: white;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px #000000, 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+/* PIE DE PAGINA */
+#pie {
+    text-align: center;
+    border: 1px solid var(--color2);
+    margin: 10px;
+    padding: 10px;
+}
+
+#pie h3,
+#pie p {
+    padding: 5px;
+    color: white;
+}
+
+#pie img {
+    height: 50px;
+    margin: 10px;
+}

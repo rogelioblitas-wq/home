@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Jurásico - Inicio</title>
+    
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico.jpg">
+    <link rel="stylesheet" href="estilo.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("imagenes/world.jpg") no-repeat center center;
+            background-size: contain;
+            background-color: #0c0c0c;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 800px;
+        }
+        .hero h1 {
+            font-size: 3.2rem;
+            font-style: italic;
+            margin-bottom: 12px;
+            color: #2ecc71;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+        }
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 650px;
+            margin-bottom: 25px;
+            font-style: italic;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+        }
+        
+        .hero .social-links {
+            margin-top: 15px; 
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mundo Jurásico</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-earth-americas"></i> INICIO</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-book-open"></i> BLOG</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-images"></i> GALERIA</a></li>
+                <li><a href="videos.html"><i class="fa-solid fa-video"></i> VIDEOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>MUNDO JURÁSICO</h1>
+        <p>"Descubre la era de los gigantes que gobernaron la Tierra, adéntrate en el fascinante misterio de los dinosaurios."</p>
+        
+        <div class="social-links">
+            <div class="social-links">
+    <a href="https://x.com" target="_blank" class="x-icon">𝕏</a>
+    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+</div>
+</div>
+</div>
+        </div>
+    </main>
+<audio id="musicaFondo" src="audio/Jungla - Efecto de Sonido.mp3" loop preload="auto"></audio>
+
+<script>
+    const audio = document.getElementById('musicaFondo');
+
+   
+    window.addEventListener('load', function() {
+        if (localStorage.getItem('reproduciendo') === 'true') {
+            audio.play().catch(() => {});
+        }
+    });
+
+    
+    window.addEventListener('click', function() {
+        if (audio.paused) {
+            audio.play().then(() => {
+                localStorage.setItem('reproduciendo', 'true');
+            }).catch(function(error) {
+                console.log("Audio bloqueado por navegador");
+            });
+        }
+    });
+
+    
+    document.querySelectorAll('nav a').forEach(enlace => {
+        enlace.addEventListener('click', function() {
+            localStorage.setItem('reproduciendo', 'true');
+        });
+    });
+</script>
+</body>
+</html>

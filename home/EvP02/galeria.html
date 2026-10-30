@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Jurásico - Galería</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico.jpg">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        
+        .galeria-card {
+            width: 320px;
+            background: #ffffff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            text-align: center;
+            padding-bottom: 12px;
+        }
+        .galeria-img-box {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+        .galeria-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+        .galeria-img-box img:hover {
+            transform: scale(1.12);
+            filter: brightness(90%) saturate(120%);
+        }
+        .galeria-card h3 {
+            margin-top: 12px;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mundo Jurásico</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-earth-americas"></i> INICIO</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-book-open"></i> BLOG</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-images"></i> GALERIA</a></li>
+                <li><a href="videos.html"><i class="fa-solid fa-video"></i> VIDEOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <h2 style="text-align: center; margin-top: 25px; color: #2c3e50;">Galería de Especies Prehistóricas</h2>
+        
+        <div class="galeria-container">
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/trex.jpg" alt="Tyrannosaurus Rex"></div>
+                <h3>Tyrannosaurus Rex</h3>
+            </div>
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/habita.jpg" alt="Triceratops"></div>
+                <h3>Triceratops</h3>
+            </div>
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/raptor.jpg" alt="Velociraptor"></div>
+                <h3>Velociraptor</h3>
+            </div>
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/Brachiosaurus.jpg" alt="Brachiosaurus"></div>
+                <h3>Brachiosaurus</h3>
+            </div>
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/stegosaurus.jpg" alt="Stegosaurus"></div>
+                <h3>Stegosaurus</h3>
+            </div>
+            <div class="galeria-card">
+                <div class="galeria-img-box"><img src="imagenes/pterodactyl.jpg" alt="Pterodactyl"></div>
+                <h3>Pterodactyl</h3>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://x.com" target="_blank" class="x-icon">𝕏</a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Mundo Jurásico - ISIL</p>
+    </footer>
+<audio id="musicaFondo" src="audio/Jungla - Efecto de Sonido.mp3" loop preload="auto"></audio>
+
+<script>
+    const audio = document.getElementById('musicaFondo');
+
+   
+    window.addEventListener('load', function() {
+        if (localStorage.getItem('reproduciendo') === 'true') {
+            audio.play().catch(() => {});
+        }
+    });
+
+    
+    document.querySelectorAll('nav a').forEach(enlace => {
+        enlace.addEventListener('click', function() {
+            localStorage.setItem('reproduciendo', 'true');
+        });
+    });
+</script>
+</body>
+</html>

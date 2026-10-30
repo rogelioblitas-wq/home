@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dominando la Fuerza del CSS</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- Position Sticky: Navbar -->
+  <header class="navbar">
+    <nav>
+      <a href="#personajes">Personajes</a>
+      <a href="#naves">Naves</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>DOMINANDO LA FUERZA DEL CSS</h1>
+    <p>Posicionamiento, Filtros y Transformaciones</p>
+  </section>
+
+  <!-- Contenedor Principal de Personajes -->
+  <main class="container" id="personajes">
+    
+    <!-- Tarjeta 1: Luke Skywalker -->
+    <article class="card">
+      <div class="card-image-wrapper">
+        <img src="imagenes/Luke Skywalker.png" alt="Luke Skywalker" class="card-img">
+        <!-- Position Absolute: Etiqueta -->
+        <span class="badge badge-jedi">JEDI</span>
+      </div>
+      <div class="card-content">
+        <h2>Luke Skywalker</h2>
+        <p>El último caballero Jedi.</p>
+      </div>
+    </article>
+
+    <!-- Tarjeta 2: Darth Vader -->
+    <article class="card">
+      <div class="card-image-wrapper">
+        <img src="imagenes/darth vader1.jpg" alt="Darth Vader" class="card-img">
+        <!-- Position Absolute: Etiqueta -->
+        <span class="badge badge-sith">SITH</span>
+      </div>
+      <div class="card-content">
+        <h2>Darth Vader</h2>
+        <p>Señor oscuro del Imperio.</p>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Position Fixed: Botón Flotante para Volver Arriba -->
+  <a href="#" class="btn-scroll-top" title="Volver arriba">↑</a>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Jurásico - Blog</title>
+    <link rel="icon" type="image/x-icon" href="imagenes/favicon.ico.jpg">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 35px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .img-figure {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .blog-container img.main-img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        .img-figure figcaption {
+            margin-top: 8px;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+        .author-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px 0;
+        }
+        .author-box img {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Mundo Jurásico</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-earth-americas"></i> INICIO</a></li>
+                <li><a href="blog.html"><i class="fa-solid fa-book-open"></i> BLOG</a></li>
+                <li><a href="galeria.html"><i class="fa-solid fa-images"></i> GALERIA</a></li>
+                <li><a href="videos.html"><i class="fa-solid fa-video"></i> VIDEOS</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-content">
+        <article class="blog-container">
+            <h2>El misterio de la extinción de los dinosaurios</h2>
+            
+            <div class="author-box">
+                <img src="imagenes/rogelio foto.jpg" alt="Foto del estudiante">
+                <div>
+                    <strong>Jaime Rogelio Oblitas Inoñan</strong><br>
+                    <small>Estudiante de ISIL | 30/09/2026</small>
+                </div>
+            </div>
+
+            
+            <figure class="img-figure">
+                <img src="imagenes/autor.jpg" alt="Excavación y registro fósil" class="main-img">
+                <figcaption>Registro fósil y evidencias arqueológicas de la era mesozoica.</figcaption>
+            </figure>
+
+            <p><strong>30/09/2026 - </strong> Hace aproximadamente 66 millones de años, un evento catastrófico marcó el final de la Era Mesozoica. El impacto de un asteroide de gran tamaño en la península de Yucatán desató cambios climáticos drásticos que alteraron por completo los ecosistemas globales de nuestro planeta.</p>
+            <br>
+            <p>Durante décadas, los paleontólogos han debatido las causas exactas, combinando la teoría del impacto con la intensa actividad volcánica de la época. Esta combinación de cenizas en la atmósfera y la falta de luz solar afectó profundamente la cadena alimentaria mundial.</p>
+            <br>
+            <p>A pesar de la desaparición de los dinosaurios no aviarios, su legado sigue vivo en la actualidad a través de las aves modernas. El estudio continuo de fósiles nos permite comprender mejor cómo la biodiversidad se recupera tras las extinciones masivas.</p>
+
+            <div style="margin-top: 30px; text-align: center;">
+                <p>Síguenos en nuestras redes sociales:</p>
+                <div class="social-links">
+                    <a href="https://x.com" target="_blank" class="x-icon">𝕏</a>
+                    <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://tiktok.com" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Mundo Jurásico - ISIL</p>
+    </footer>
+<audio id="musicaFondo" src="audio/Jungla - Efecto de Sonido.mp3" loop preload="auto"></audio>
+
+<script>
+    const audio = document.getElementById('musicaFondo');
+
+   
+    window.addEventListener('load', function() {
+        if (localStorage.getItem('reproduciendo') === 'true') {
+            audio.play().catch(() => {});
+        }
+    });
+
+    
+    document.querySelectorAll('nav a').forEach(enlace => {
+        enlace.addEventListener('click', function() {
+            localStorage.setItem('reproduciendo', 'true');
+        });
+    });
+</script>
+</body>
+</html>
