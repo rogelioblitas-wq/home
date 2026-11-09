@@ -1,0 +1,173 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b0e14;
+  color: #ffffff;
+  min-height: 150vh; /* Para permitir scroll y probar sticky/fixed */
+}
+
+/* dominio de position */
+
+/* position de sticky: Cabecera */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #f5b027;
+  padding: 15px 0;
+  text-align: center;
+}
+
+.navbar nav a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 15px;
+  font-size: 1rem;
+  transition: color 0.3s; ease;
+
+}
+/* aqui el efecto hover */
+.navbar nav a:hover {
+  color: #ffffff; /* Cambia a blanco cuando pase el cursor (puedo cambiar el código por el color que me guste) */
+}
+/* section hero */
+.hero {
+  background-color: #000000;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cccccc;
+}
+
+/* contenedor de tarjetas (Uso de calc) */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: #1a222d;
+  border-radius: 16px;
+  overflow: hidden;
+  /* Función calc() exigida en el requerimiento para el ancho */
+  width: calc(50% - 20px);
+  min-width: 280px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  /* position relative: Actúa como ancla para la tarjeta y la etiqueta */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* interactividad: Transform (translateY) al hacer hover en la tarjeta */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* contenedor de imagen (Relative para la etiqueta absolute) */
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  /* aspect-ratio exigido */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+/* optimizacion : object-fit + FILTROS Y TRANSICIONES */
+.card-img {
+  width: 100%;
+  height: 100%;
+  /* object-fit: cover exigido */
+  object-fit: cover;
+  /* Estado inicial del filtro */
+  filter: grayscale(80%) brightness(0.8);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+/* interactividad: Transform y Filter en hover de la imagen */
+.card:hover .card-img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.05);
+}
+
+/* position absolute: Etiqueta superpuesta */
+.badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.badge-jedi {
+  background-color: #00bcd4;
+}
+
+.badge-sith {
+  background-color: #e91e63;
+}
+
+.card-content {
+  padding: 25px 20px;
+}
+
+.card-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.card-content p {
+  color: #a0aab8;
+  font-size: 0.95rem;
+}
+
+/* position fixed: Botón flotante para scroll top */
+.btn-scroll-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+  background-color: #f5b027;
+  color: #000000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-scroll-top:hover {
+  transform: scale(1.15);
+  background-color: #ffc107;
+}
